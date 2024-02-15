@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillTag, AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCartFill, BsFillSaveFill } from 'react-icons/bs';
 import { TbTruckDelivery } from 'react-icons/tb'
@@ -6,11 +6,15 @@ import { FaUserFriends, FaWallet } from 'react-icons/fa';
 import { MdFavorite, MdHelp } from 'react-icons/md';
 
 const Navbar = () => {
+
+    const [nav, SetNav] = useState(false);
+
+
   return (
     <div className='max-w-[1640px] max-auto flex justify-between items-center p-4'>
         {/* left Side */}
         <div className='flex items-center'>
-            <div className='cursor-pointer'>
+            <div onClick={()=> SetNav(!nav)} className='cursor-pointer'>
                 <AiOutlineMenu size={30} />
             </div>
             <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>
@@ -37,12 +41,16 @@ const Navbar = () => {
 
          {/* Mobile Menu */}
         {/* Overlay */}
-         <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'>
+        {nav ? <div  className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div> : ''}
+         
 
             {/* Side Drawer Menu */}
-            <div className='fixed top-0 left-0 w-[300px] h-screen bg-white z-10
-            duration-300'>
-             <AiOutlineClose size={25} className='absolute right-4 cursor-pointer'/>
+            <div className={nav ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300' }>
+             <AiOutlineClose 
+             size={25} 
+             className='absolute right-4 cursor-pointer'
+             onClick={()=>SetNav(!nav)}
+             />
              <h2 className='text-2xl p-4'>
                 Shazz <span className='font-bold'>Eats </span>
                 </h2>
@@ -66,7 +74,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
             </div>
-         </div>
+         
     </div>
   )
 }
