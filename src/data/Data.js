@@ -181,4 +181,25 @@ export const categories = [
         image:
         'https://images.pexels.com/photos/2679501/pexels-photo-2679501.jpeg?auto=compress&cs=tinysrgb&w=600',
     },
+
+    {
+        id:6,
+        name:'Restaurant Rewards',
+        image:
+        'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
+
+    {
+        id:7,
+        name:'Best Overall',
+        image:
+        'https://images.pexels.com/photos/19688906/pexels-photo-19688906/free-photo-of-salmon-and-eggs-served-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
+
+    {
+        id:8,
+        name:'Shipped Foods',
+        image:
+        'https://images.pexels.com/photos/4099127/pexels-photo-4099127.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
 ];
