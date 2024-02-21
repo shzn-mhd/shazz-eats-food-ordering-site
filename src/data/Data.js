@@ -1,9 +1,11 @@
+
 export const data = [
     {
         id: 1,
         name: 'Double Cheeseburger',
         category: 'burger',
         image :
+        // 'src\data\photo-1542273917363-3b1817f69a2d.jpg',
         'https://images.pexels.com/photos/16352973/pexels-photo-16352973/free-photo-of-delicious-double-burger-with-melted-cheese.jpeg?auto=compress&cs=tinysrgb&w=400',
         price: '$$$$',
     },

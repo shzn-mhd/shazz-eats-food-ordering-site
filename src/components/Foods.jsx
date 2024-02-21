@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { data } from '../data/Data'
 
 const Foods = () => {
   // console.log(data);
+
+  const[foods, setFoods] = useState(data)
+
+
   return (
     <div className='max-w-[1640px] m-auto px-4 p-12 py-12'>
       <h1 className='text-orange-600 font-bold text-4xl text-center'>Top Rated Menu Items</h1>
@@ -20,7 +24,7 @@ const Foods = () => {
               <button className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>Chicken</button>
             </div>
           </div>
-        <div>
+        
 
           {/* Filter Price */}
           <div>
@@ -33,15 +37,19 @@ const Foods = () => {
             </div>
           </div>
 
-        </div>
+        
       </div>
       
       {/* Display Foods */}
       <div>
-        
+        {foods.map((item, index) => (
+          <divv key={index}>
+            <img src={item.image} alt={`${item.name}-Image`} />
+          </divv>
+        ))}
       </div>
     </div>
   )
 }
 
-export default Foods
+export default Foods;
